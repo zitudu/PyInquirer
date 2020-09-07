@@ -146,6 +146,8 @@ def question(message, **kwargs):
         # event.app.exit(result=None)
 
     @kb.add('down', eager=True)
+    @kb.add('j', eager=True)
+    @kb.add('c-n', eager=True)
     def move_cursor_down(event):
         def _next():
             ic.selected_option_index = (
@@ -156,6 +158,8 @@ def question(message, **kwargs):
             _next()
 
     @kb.add('up', eager=True)
+    @kb.add('k', eager=True)
+    @kb.add('c-p', eager=True)
     def move_cursor_up(event):
         def _prev():
             ic.selected_option_index = (
